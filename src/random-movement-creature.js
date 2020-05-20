@@ -26,6 +26,14 @@ class RandomMovementCreature{
         this.pos = [this.pos[0] + vert, this.pos[1] + horz];
     }
 
+    getXPos() {
+        return this.pos[1];
+    }
+
+    getYPos() {
+        return this.pos[0];
+    }
+
 
     drawCreature(ctx) {
         this.count += 1;

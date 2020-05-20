@@ -84,6 +84,14 @@ class Player {
         // this.pos = [Math.floor(Math.random()*8), Math.floor(Math.random()*8)];
     }
 
+    getXPos(){
+        return this.pos[1];
+    }
+
+    getYPos(){
+        return this.pos[0];
+    }
+
 
     drawPlayer(ctx) {
         ctx.fillStyle = "blue";
