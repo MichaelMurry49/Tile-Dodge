@@ -1,11 +1,12 @@
 import Map from './map';
 import Player from './player';
-import RandomMovementCreature from './random-movement-creature'
+import RandomMovementCreature from './random-movement-creature';
+import PlayerChasingCreature from './player-chasing-creature';
 class Game {
     // constructor(){
 
     // }
-    step(ctx, map, player, rmc) {
+    step(ctx, map, player, rmc, pcc, tiledash) {
         // debugger
         map.drawMap(8, ctx);
 
@@ -19,6 +20,14 @@ class Game {
         // rmc.move();
         // rmc.drawCreature(ctx);
         rmc.drawCreature(ctx);
+        pcc.drawCreature(ctx);
+        // debugger;
+        if((pcc.getXPos() === player.getXPos() && pcc.getYPos() === player.getYPos()) || 
+            (rmc.getXPos() === player.getXPos() && rmc.getYPos() === player.getYPos())){
+                // debugger;
+                alert("game over, you lose");
+                window.clearInterval(tiledash);
+            }
 
     }
 }

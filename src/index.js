@@ -3,7 +3,8 @@ import Map from './map';
 import Game from './game';
 import GameView from './game-view';
 import Player from './player';
-import RandomMovementCreature from './random-movement-creature'
+import RandomMovementCreature from './random-movement-creature';
+import PlayerChasingCreature from './player-chasing-creature';
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let game = new Game();
     let gameview = new GameView();
     let rmc = new RandomMovementCreature(30, map);
+    let pcc = new PlayerChasingCreature(30, player);
     ctx.font = "30px courier";
-    gameview.start(ctx, game, map, player, rmc);
+    gameview.start(ctx, game, map, player, rmc, pcc);
     
 });
 
