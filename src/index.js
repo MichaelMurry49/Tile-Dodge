@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let player = new Player(30, map);
     let game = new Game();
     let gameview = new GameView();
-    let rmc = new RandomMovementCreature();
+    let rmc = new RandomMovementCreature(30, map);
     ctx.font = "30px courier";
     gameview.start(ctx, game, map, player, rmc);
     
