@@ -4,7 +4,7 @@ class Game {
     // constructor(){
 
     // }
-    step(ctx, map, player) {
+    step(ctx, map, player, rmc) {
         // debugger
         map.drawMap(8, ctx);
 
@@ -14,6 +14,7 @@ class Game {
         }, false)
         // debugger;
         player.drawPlayer(ctx);
+        window.setInterval(() => rmc.drawCreature(ctx), 500);
 
     }
 }

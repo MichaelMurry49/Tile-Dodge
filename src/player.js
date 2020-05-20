@@ -1,7 +1,7 @@
 import Map from './map';
 class Player {
     constructor(size, map) {
-        this.pos = [2, 4];
+        this.pos = [3, 3];
         this.size = size;
         this.map = map;
     }

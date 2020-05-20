@@ -1,5 +1,9 @@
 
 import Map from './map';
+import Game from './game';
+import GameView from './game-view';
+import Player from './player';
+import RandomMovementCreature from './random-movement-creature'
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,20 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const ctx = tdCanvas.getContext("2d");
     // debugger;
-    // const map = new Wap();
-    // let player = new Wlayer(30, map);
-    // let game = new Wame();
-    // let gameview = new WameView();
-    ctx.font = "30px Arial";
-    debugger
-    // map.drawMap(8, ctx);
-    gameview.start(ctx, game, map, player);
-    // map.drawMap(8, ctx);
-    
-    // document.addEventListener("keypress", e => {
-    //     player.move(e.key)
-    // }, false)
-    // player.drawPlayer(ctx);
+    const map = new Map();
+    let player = new Player(30, map);
+    let game = new Game();
+    let gameview = new GameView();
+    let rmc = new RandomMovementCreature();
+    ctx.font = "30px courier";
+    gameview.start(ctx, game, map, player, rmc);
     
 });
 
@@ -111,124 +108,124 @@ document.addEventListener("DOMContentLoaded", function () {
 //     }
 // }
 
-class Wlayer {
-    constructor(size, map){
-        this.pos = [2,4];
-        this.size = size;
-        this.map = map;
-    }
+// class Wlayer {
+//     constructor(size, map){
+//         this.pos = [2,4];
+//         this.size = size;
+//         this.map = map;
+//     }
 
-    move(key){
-        // let neighbors = [];
-        // for(let i = 0; i < 3; i++){
-        //     if(this.map.gridKeys[pos[0] - ]
-        // }
-        // Check Where The Player can move
-        if(key === this.map.getKey(this.pos)) return;
-        let up = false;
-        let left = false;
-        let right = false;
-        let down = false;
-        if(this.pos[0] > 0) up = true;
-        if(this.pos[0] < 7) down = true;
-        if(this.pos[1] > 0) left = true;
-        if(this.pos[1] < 7) right = true; 
-        // Check upper positions
-        if(up){
-            // Check left
-            if(left) {
-                if(this.map.getKey([this.pos[0]-1, this.pos[1]-1]) === key){
-                    debugger
-                    this.pos = [this.pos[0]-1, this.pos[1]-1];
-                } 
-            }
-            // Check center
-            if (this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
-                debugger;
-                this.pos = [this.pos[0] - 1, this.pos[1]];
-            }
-            // Check right
-            if (right) {
-                debugger;
-                if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
-                    this.pos = [this.pos[0] - 1, this.pos[1] + 1];
-                }
-            } 
-        }
-        // Check center positions
-        // Check left
-        if (left) {
-            if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
-                debugger
-                this.pos = [this.pos[0], this.pos[1] - 1];
-            }
-        }
-        // Check right
-        if (right) {
-            if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
-                debugger
-                this.pos = [this.pos[0], this.pos[1] + 1];
-            }
-        }
-        // Check lower positions
-        if (down) {
-            // Check left
-            if (left) {
-                debugger
-                if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
-                    this.pos = [this.pos[0] + 1, this.pos[1] - 1];
-                }
-            }
-            // Check center
-            if (this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
-                debugger
-                this.pos = [this.pos[0] + 1, this.pos[1]];
-            }
-            // Check right
-            if (right) {
-                debugger
-                if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
-                    this.pos = [this.pos[0] + 1, this.pos[1] + 1];
-                }
-            }
-        }
+//     move(key){
+//         // let neighbors = [];
+//         // for(let i = 0; i < 3; i++){
+//         //     if(this.map.gridKeys[pos[0] - ]
+//         // }
+//         // Check Where The Player can move
+//         if(key === this.map.getKey(this.pos)) return;
+//         let up = false;
+//         let left = false;
+//         let right = false;
+//         let down = false;
+//         if(this.pos[0] > 0) up = true;
+//         if(this.pos[0] < 7) down = true;
+//         if(this.pos[1] > 0) left = true;
+//         if(this.pos[1] < 7) right = true; 
+//         // Check upper positions
+//         if(up){
+//             // Check left
+//             if(left) {
+//                 if(this.map.getKey([this.pos[0]-1, this.pos[1]-1]) === key){
+//                     debugger
+//                     this.pos = [this.pos[0]-1, this.pos[1]-1];
+//                 } 
+//             }
+//             // Check center
+//             if (this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
+//                 debugger;
+//                 this.pos = [this.pos[0] - 1, this.pos[1]];
+//             }
+//             // Check right
+//             if (right) {
+//                 debugger;
+//                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
+//                     this.pos = [this.pos[0] - 1, this.pos[1] + 1];
+//                 }
+//             } 
+//         }
+//         // Check center positions
+//         // Check left
+//         if (left) {
+//             if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
+//                 debugger
+//                 this.pos = [this.pos[0], this.pos[1] - 1];
+//             }
+//         }
+//         // Check right
+//         if (right) {
+//             if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
+//                 debugger
+//                 this.pos = [this.pos[0], this.pos[1] + 1];
+//             }
+//         }
+//         // Check lower positions
+//         if (down) {
+//             // Check left
+//             if (left) {
+//                 debugger
+//                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
+//                     this.pos = [this.pos[0] + 1, this.pos[1] - 1];
+//                 }
+//             }
+//             // Check center
+//             if (this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
+//                 debugger
+//                 this.pos = [this.pos[0] + 1, this.pos[1]];
+//             }
+//             // Check right
+//             if (right) {
+//                 debugger
+//                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
+//                     this.pos = [this.pos[0] + 1, this.pos[1] + 1];
+//                 }
+//             }
+//         }
 
-        // this.pos = [Math.floor(Math.random()*8), Math.floor(Math.random()*8)];
-    }
+//         // this.pos = [Math.floor(Math.random()*8), Math.floor(Math.random()*8)];
+//     }
     
 
-    drawPlayer(ctx){
-        ctx.fillStyle = "blue";
-        ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+//     drawPlayer(ctx){
+//         ctx.fillStyle = "blue";
+//         ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+//         ctx.strokeStyle = "black";
+//         ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
         
-    }
-}
+//     }
+// }
 
-class WameView {
-    start(ctx, game, map, player){
-        // debugger
-        map.drawMap(8,ctx);
-        player.drawPlayer(ctx);
-        window.setInterval(() => game.step(ctx, map, player), 30);
-    }
-}
+// class WameView {
+//     start(ctx, game, map, player){
+//         // debugger
+//         map.drawMap(8,ctx);
+//         player.drawPlayer(ctx);
+//         window.setInterval(() => game.step(ctx, map, player), 30);
+//     }
+// }
 
-class Wame {
-    // constructor(){
+// class Wame {
+//     // constructor(){
 
-    // }
-    step(ctx, map, player){
-        // debugger
-        map.drawMap(8, ctx);
+//     // }
+//     step(ctx, map, player){
+//         // debugger
+//         map.drawMap(8, ctx);
         
-        document.addEventListener("keypress", e => {
-            // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
-            player.move(e.key)
-        }, false)
-        // debugger;
-        player.drawPlayer(ctx);
+//         document.addEventListener("keypress", e => {
+//             // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
+//             player.move(e.key)
+//         }, false)
+//         // debugger;
+//         player.drawPlayer(ctx);
         
-    }
-}
+//     }
+// }

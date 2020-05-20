@@ -48,6 +48,7 @@ class Map {
                 ctx.strokeStyle = "black";
                 ctx.strokeRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.fillStyle = "black";
+                // this.getKey([i, j]) === this.getKey([i, j]).toUpperCase ? ctx.font = "30px Source Sans Pro" : "60px Source Sans Pro"
                 ctx.fillText(this.getKey([i, j]), 60 * j + 100, 60 * i + 100);
             }
         }
