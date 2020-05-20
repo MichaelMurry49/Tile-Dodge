@@ -1,5 +1,6 @@
 import Map from './map';
 import Player from './player';
+import RandomMovementCreature from './random-movement-creature'
 class Game {
     // constructor(){
 
@@ -14,7 +15,10 @@ class Game {
         }, false)
         // debugger;
         player.drawPlayer(ctx);
-        window.setInterval(() => rmc.drawCreature(ctx), 500);
+        // window.setInterval(() => rmc.move(), 2000);
+        // rmc.move();
+        // rmc.drawCreature(ctx);
+        rmc.drawCreature(ctx);
 
     }
 }
