@@ -1,0 +1,20 @@
+.menu-button {
+    background: linear-gradient(lightblue, skyblue);
+    border-radius: 50px;
+    border-color: blue;
+    height: 25px;
+    width: 100px;
+    margin: 5px;
+}
+
+.tile-dodge {
+    background-color: aqua;
+    color: blue;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
