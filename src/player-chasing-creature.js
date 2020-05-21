@@ -13,8 +13,11 @@ class RandomMovementCreature {
         let horz = 0;
         this.player.getYPos() < this.pos[0] ? vert -= 1 : vert += 0;
         this.player.getYPos() > this.pos[0] ? vert += 1 : vert += 0;
-        this.player.getXPos() < this.pos[1] ? horz -= 1 : horz += 0;
-        this.player.getXPos() > this.pos[1] ? horz += 1 : horz += 0;
+        if(vert === 0){
+            this.player.getXPos() < this.pos[1] ? horz -= 1 : horz += 0;
+            this.player.getXPos() > this.pos[1] ? horz += 1 : horz += 0;
+        }
+       
         this.pos = [this.pos[0] + vert, this.pos[1] + horz];
     }
 
