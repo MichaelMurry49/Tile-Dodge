@@ -8,6 +8,7 @@ class Map {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '[', ']'];
         this.gridKeys = [];
         this.gridStorage = new Array(8).fill(null).map(el => new Array(8));
+        this.gridColors = new Array(8).fill(null).map(el => new Array(8));
         this.fillGrid();
         this.gridStorage[0][0] = 1;
         // console.log(this.gridStorage)
@@ -22,6 +23,7 @@ class Map {
                 let rand = Math.floor(Math.random() * temp.length)
                 // console.log(temp[rand])
                 this.gridKeys[i].push(temp[rand]);
+                this.gridColors[i][j] = "gray";
                 temp = temp.slice(0, rand).concat(temp.slice(rand + 1));
                 // console.log(this.gridKeys, i, j)
             }
@@ -38,12 +40,24 @@ class Map {
         return this.gridKeys[pos[0]][pos[1]];
     }
 
+    getColor(pos) {
+        return this.gridColors[pos[0]][pos[1]];
+    }
+
+    setColor(pos, color) {
+        this.gridColors[pos[0]][pos[1]] = color;
+    }
+
+    getColorArray() {
+        return this.gridColors;
+    }
+
     drawMap(x, ctx) {
         // console.log(x);
         for (let i = 0; i < x; i++) {
             for (let j = 0; j < x; j++) {
-                ctx.fillStyle = ["gray", /*"orange", "yellow", "lightblue", "lightgreen", "turquoise", "pink",*/ "silver"][Math.floor(Math.random() * 2)];
-
+                // ctx.fillStyle = ["gray", /*"orange", "yellow", "lightblue", "lightgreen", "turquoise", "pink",*/ "silver"][Math.floor(Math.random() * 2)];
+                ctx.fillStyle = this.getColor([i,j]);
                 ctx.fillRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.strokeStyle = "black";
                 ctx.strokeRect(60 * j + 80, 60 * i + 60, 60, 60);

@@ -6,7 +6,7 @@ class Game {
     // constructor(){
 
     // }
-    step(ctx, map, player, rmc, pcc, tiledash) {
+    step(ctx, map, player, rmc, pcc,/** rmc2, pcc2, rmc3, pcc3, **/ tiledash) {
         // debugger
         map.drawMap(8, ctx);
 
@@ -21,6 +21,10 @@ class Game {
         // rmc.drawCreature(ctx);
         rmc.drawCreature(ctx);
         pcc.drawCreature(ctx);
+        // rmc2.drawCreature(ctx);
+        // pcc2.drawCreature(ctx);
+        // rmc3.drawCreature(ctx);
+        // pcc3.drawCreature(ctx);
         // debugger;
         if((pcc.getXPos() === player.getXPos() && pcc.getYPos() === player.getYPos()) || 
             (rmc.getXPos() === player.getXPos() && rmc.getYPos() === player.getYPos())){

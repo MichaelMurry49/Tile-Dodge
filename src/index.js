@@ -7,24 +7,30 @@ import RandomMovementCreature from './random-movement-creature';
 import PlayerChasingCreature from './player-chasing-creature';
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const tdCanvas = document.getElementById("tile-dodge");
-    tdCanvas.width = 600;
-    tdCanvas.height = 600;
-    const map2 = new Map();
+// var play = () => {
+    document.addEventListener("DOMContentLoaded", function () {
+        const tdCanvas = document.getElementById("tile-dodge");
+        tdCanvas.width = 600;
+        tdCanvas.height = 600;
+        const map2 = new Map();
 
-    const ctx = tdCanvas.getContext("2d");
-    // debugger;
-    const map = new Map();
-    let player = new Player(30, map);
-    let game = new Game();
-    let gameview = new GameView();
-    let rmc = new RandomMovementCreature(30, map);
-    let pcc = new PlayerChasingCreature(30, player);
-    ctx.font = "30px courier";
-    gameview.start(ctx, game, map, player, rmc, pcc);
-    
-});
+        const ctx = tdCanvas.getContext("2d");
+        // debugger;
+        const map = new Map();
+        let player = new Player(30, map);
+        let game = new Game();
+        let gameview = new GameView();
+        let rmc = new RandomMovementCreature(30, map);
+        let pcc = new PlayerChasingCreature(30, player);
+        let rmc2 = new RandomMovementCreature(30, map);
+        let pcc2 = new PlayerChasingCreature(30, player);
+        let rmc3 = new RandomMovementCreature(30, map);
+        let pcc3 = new PlayerChasingCreature(30, player);
+        ctx.font = "30px noto sans";
+        gameview.start(ctx, game, map, player, rmc, pcc, rmc2, pcc2, rmc3, pcc3); 
+    });
+// }
+
 
 
 
