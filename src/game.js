@@ -31,7 +31,12 @@ class Game {
                 // debugger;
                 alert("game over, you lose");
                 window.clearInterval(tiledash);
-            }
+        }
+        debugger
+        if (map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "lightgreen"))){
+            alert("congratulations, you win");
+            window.clearInterval(tiledash);
+        }
 
     }
 }

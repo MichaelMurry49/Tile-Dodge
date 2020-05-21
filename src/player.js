@@ -26,20 +26,20 @@ class Player {
             // Check left
             if (left) {
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] - 1]) === key) {
-                    debugger
+                    // debugger
                     this.pos = [this.pos[0] - 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "lightgreen");
                 }
             }
             // Check center
             if (this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
-                debugger;
+                // debugger;
                 this.pos = [this.pos[0] - 1, this.pos[1]];
                 this.map.setColor(this.pos, "lightgreen");
             }
             // Check right
             if (right) {
-                debugger;
+                // debugger;
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] - 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "lightgreen");
@@ -50,7 +50,7 @@ class Player {
         // Check left
         if (left) {
             if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
-                debugger
+                // debugger
                 this.pos = [this.pos[0], this.pos[1] - 1];
                 this.map.setColor(this.pos, "lightgreen");
             }
@@ -58,7 +58,7 @@ class Player {
         // Check right
         if (right) {
             if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
-                debugger
+                // debugger
                 this.pos = [this.pos[0], this.pos[1] + 1];
                 this.map.setColor(this.pos, "lightgreen");
             }
@@ -67,7 +67,7 @@ class Player {
         if (down) {
             // Check left
             if (left) {
-                debugger
+                // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "lightgreen");
@@ -75,13 +75,13 @@ class Player {
             }
             // Check center
             if (this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
-                debugger
+                // debugger
                 this.pos = [this.pos[0] + 1, this.pos[1]];
                 this.map.setColor(this.pos, "lightgreen");
             }
             // Check right
             if (right) {
-                debugger
+                // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "lightgreen");
