@@ -18,16 +18,20 @@ import PlayerChasingCreature from './player-chasing-creature';
         // debugger;
         const map = new Map();
         let player = new Player(30, map);
-        let game = new Game();
-        let gameview = new GameView();
-        let rmc = new RandomMovementCreature(30, map);
-        let pcc = new PlayerChasingCreature(30, player);
-        let rmc2 = new RandomMovementCreature(30, map);
-        let pcc2 = new PlayerChasingCreature(30, player);
-        let rmc3 = new RandomMovementCreature(30, map);
-        let pcc3 = new PlayerChasingCreature(30, player);
+        
+        let rmc = new RandomMovementCreature(30, map, [6,7]);
+        let pcc = new PlayerChasingCreature(30, player, [6,0]);
+        let rmc2 = new RandomMovementCreature(30, map, [6, 1]);
+        let pcc2 = new PlayerChasingCreature(30, player, [6,6]);
+        let rmc3 = new RandomMovementCreature(30, map, [6,5]);
+        let pcc3 = new PlayerChasingCreature(30, player, [6, 2]);
+        let creatures = [rmc, pcc, rmc2, pcc2, rmc3, pcc3];
+        
+        let game = new Game(ctx, map, player, creatures);
+        let gameview = new GameView(game);
+        
         ctx.font = "30px noto sans";
-        gameview.start(ctx, game, map, player, rmc, pcc, rmc2, pcc2, rmc3, pcc3); 
+        gameview.start(); 
     });
 // }
 

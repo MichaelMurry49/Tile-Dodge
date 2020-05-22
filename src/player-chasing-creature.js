@@ -1,7 +1,7 @@
 import Map from './map';
 class RandomMovementCreature {
-    constructor(size, player) {
-        this.pos = [2, 6];
+    constructor(size, player, startPos) {
+        this.pos = startPos;
         this.size = size;
         this.count = 0;
         this.player = player;
