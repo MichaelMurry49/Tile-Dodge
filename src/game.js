@@ -10,7 +10,7 @@ class Game {
         this.map = map;
         this.player = player;
         this.creatures = creatures; 
-        this.level1 = new Level(this.ctx, this.map, this.player, this.creatures);
+        this.level1 = new Level("Level 1", this.ctx, this.map, this.player, this.creatures.slice(0, 5));
         this.levels = [this.level1];
     }
     startLevel() {

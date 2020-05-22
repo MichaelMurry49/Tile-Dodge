@@ -52,8 +52,9 @@ class Map {
         return this.gridColors;
     }
 
-    drawMap(x, ctx) {
+    drawMap(x, ctx, title) {
         // console.log(x);
+       
         for (let i = 0; i < x; i++) {
             for (let j = 0; j < x; j++) {
                 // ctx.fillStyle = ["gray", /*"orange", "yellow", "lightblue", "lightgreen", "turquoise", "pink",*/ "silver"][Math.floor(Math.random() * 2)];
@@ -65,7 +66,9 @@ class Map {
                 // this.getKey([i, j]) === this.getKey([i, j]).toUpperCase ? ctx.font = "30px Source Sans Pro" : "60px Source Sans Pro"
                 ctx.fillText(this.getKey([i, j]), 60 * j + 100, 60 * i + 100);
             }
-        }
+        } 
+        ctx.fillStyle = "black";
+        ctx.fillText(title, 270, 30);
     }
 }
 

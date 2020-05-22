@@ -3,12 +3,13 @@ import Player from './player';
 import RandomMovementCreature from './random-movement-creature';
 import PlayerChasingCreature from './player-chasing-creature';
 class Level {
-    constructor(ctx, map, player, creatures){
+    constructor(title, ctx, map, player, creatures){
         this.ctx = ctx;
         this.map = map;
         this.player = player;
         this.creatures = creatures;
         this.levelRunning = false;
+        this.title = title;
 
     }
 
@@ -21,7 +22,7 @@ class Level {
     }
     step() {
         // debugger
-        this.map.drawMap(8, this.ctx);
+        this.map.drawMap(8, this.ctx, this.title);
 
         document.addEventListener("keypress", e => {
             // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
