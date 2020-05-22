@@ -1,43 +1,22 @@
 import Map from './map';
+import Level from './level';
 import Player from './player';
 import RandomMovementCreature from './random-movement-creature';
 import PlayerChasingCreature from './player-chasing-creature';
 class Game {
-    // constructor(){
-
-    // }
-    step(ctx, map, player, rmc, pcc,/** rmc2, pcc2, rmc3, pcc3, **/ tiledash) {
+    constructor(ctx, map, player, creatures,/** rmc2, pcc2, rmc3, pcc3, **/){
+        this.nextLevel = 0;
+        this.ctx = ctx;
+        this.map = map;
+        this.player = player;
+        this.creatures = creatures; 
+        this.level1 = new Level(this.ctx, this.map, this.player, this.creatures);
+        this.levels = [this.level1];
+    }
+    startLevel() {
         // debugger
-        map.drawMap(8, ctx);
-
-        document.addEventListener("keypress", e => {
-            // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
-            player.move(e.key)
-        }, false)
-        // debugger;
-        player.drawPlayer(ctx);
-        // window.setInterval(() => rmc.move(), 2000);
-        // rmc.move();
-        // rmc.drawCreature(ctx);
-        rmc.drawCreature(ctx);
-        pcc.drawCreature(ctx);
-        // rmc2.drawCreature(ctx);
-        // pcc2.drawCreature(ctx);
-        // rmc3.drawCreature(ctx);
-        // pcc3.drawCreature(ctx);
-        // debugger;
-        if((pcc.getXPos() === player.getXPos() && pcc.getYPos() === player.getYPos()) || 
-            (rmc.getXPos() === player.getXPos() && rmc.getYPos() === player.getYPos())){
-                // debugger;
-                alert("game over, you lose");
-                window.clearInterval(tiledash);
-        }
-        debugger
-        if (map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "lightgreen"))){
-            alert("congratulations, you win");
-            window.clearInterval(tiledash);
-        }
-
+        this.levels[this.nextLevel].start();
+        this.nextLevel += 1;
     }
 }
 
