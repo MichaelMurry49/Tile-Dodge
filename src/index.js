@@ -19,7 +19,7 @@ import PlayerChasingCreature from './player-chasing-creature';
         const map = new Map();
         let player = new Player(30, map);
         
-        let rmc = new RandomMovementCreature(30, map, [6,7]);
+        let rmc = new RandomMovementCreature(30, map, [6,4]);
         let pcc = new PlayerChasingCreature(30, player, [6,0]);
         let rmc2 = new RandomMovementCreature(30, map, [6, 1]);
         let pcc2 = new PlayerChasingCreature(30, player, [6,6]);
