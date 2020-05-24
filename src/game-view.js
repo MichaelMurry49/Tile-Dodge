@@ -8,6 +8,7 @@ class GameView {
     }
     start() {
         this.game.startLevel();
+        
     }
 }
 
