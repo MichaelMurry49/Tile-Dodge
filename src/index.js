@@ -16,7 +16,7 @@ import PlayerChasingCreature from './player-chasing-creature';
 
         const ctx = tdCanvas.getContext("2d");
         // debugger;
-        const map = new Map();
+        const map = new Map(600, 600);
         let player = new Player(30, map);
         
         let rmc = new RandomMovementCreature(30, map, [6,7]);
@@ -27,7 +27,7 @@ import PlayerChasingCreature from './player-chasing-creature';
         let pcc3 = new PlayerChasingCreature(30, player, [6, 2]);
         let rmc4 = new RandomMovementCreature(30, map, [5, 5]);
         let pcc4 = new PlayerChasingCreature(30, player, [5, 2]);
-        let rmc5 = new RandomMovementCreature(30, map, [4, 4]);
+        let rmc5 = new RandomMovementCreature(30, map, [6, 4]);
         let pcc5 = new PlayerChasingCreature(30, player, [4, 6]);
         
 

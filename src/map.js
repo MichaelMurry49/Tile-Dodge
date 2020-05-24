@@ -1,6 +1,8 @@
 
 class Map {
-    constructor() {
+    constructor(w, h) {
+        this.width = w;
+        this.height = h;
         this.keyChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -13,6 +15,10 @@ class Map {
         this.gridStorage[0][0] = 1;
         // console.log(this.gridStorage)
 
+    }
+
+    reset(){
+        this.fillGrid();
     }
 
     fillGrid() {
@@ -54,7 +60,7 @@ class Map {
 
     drawMap(x, ctx, title) {
         // console.log(x);
-       
+        ctx.clearRect(0, 0, this.width, this.height);
         for (let i = 0; i < x; i++) {
             for (let j = 0; j < x; j++) {
                 // ctx.fillStyle = ["gray", /*"orange", "yellow", "lightblue", "lightgreen", "turquoise", "pink",*/ "silver"][Math.floor(Math.random() * 2)];

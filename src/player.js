@@ -6,6 +6,10 @@ class Player {
         this.map = map;
     }
 
+    reset(){
+        this.pos = [3,3];
+    }
+
     move(key) {
         // let neighbors = [];
         // for(let i = 0; i < 3; i++){

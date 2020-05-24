@@ -32,7 +32,7 @@ class RandomMovementCreature {
 
     drawCreature(ctx) {
         this.count += 1;
-        if (this.count >= 70) {
+        if (this.count >= 35) {
             this.count = 0;
             this.move();
         }
