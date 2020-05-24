@@ -12,7 +12,7 @@ class Game {
         // this.levelRunning = false;
         this.creatures = creatures;
        
-        this.level1 = new Level("Level 1", this.ctx, this.map, this.player, this.creatures.slice(0, 1), this);
+        this.level1 = new Level("Level 1", this.ctx, this.map, this.player, this.creatures.slice(0, 3), this);
         this.level2 = new Level("Level 2", this.ctx, this.map, this.player, this.creatures.slice(5, 7), this);
         this.level3 = new Level("Level 3", this.ctx, this.map, this.player, this.creatures.slice(0, 1).concat(this.creatures.slice(5, 7)), this);
         this.level4 = new Level("Level 4", this.ctx, this.map, this.player, this.creatures.slice(0, 3).concat(this.creatures.slice(5, 7)), this);
