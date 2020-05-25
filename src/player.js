@@ -5,6 +5,8 @@ class Player {
         this.pos = [3, 3];
         this.size = size;
         this.map = map;
+        this.image = new Image();
+        this.image.src = './assets/player.png';
     }
 
     reset(){
@@ -34,21 +36,21 @@ class Player {
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] - 1]) === key) {
                     // debugger
                     this.pos = [this.pos[0] - 1, this.pos[1] - 1];
-                    this.map.setColor(this.pos, "lightgreen");
+                    this.map.setColor(this.pos, "orange");
                 }
             }
             // Check center
             if (this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
                 // debugger;
                 this.pos = [this.pos[0] - 1, this.pos[1]];
-                this.map.setColor(this.pos, "lightgreen");
+                this.map.setColor(this.pos, "orange");
             }
             // Check right
             if (right) {
                 // debugger;
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] - 1, this.pos[1] + 1];
-                    this.map.setColor(this.pos, "lightgreen");
+                    this.map.setColor(this.pos, "orange");
                 }
             }
         }
@@ -58,7 +60,7 @@ class Player {
             if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
                 // debugger
                 this.pos = [this.pos[0], this.pos[1] - 1];
-                this.map.setColor(this.pos, "lightgreen");
+                this.map.setColor(this.pos, "orange");
             }
         }
         // Check right
@@ -66,7 +68,7 @@ class Player {
             if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
                 // debugger
                 this.pos = [this.pos[0], this.pos[1] + 1];
-                this.map.setColor(this.pos, "lightgreen");
+                this.map.setColor(this.pos, "orange");
             }
         }
         // Check lower positions
@@ -76,21 +78,21 @@ class Player {
                 // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] - 1];
-                    this.map.setColor(this.pos, "lightgreen");
+                    this.map.setColor(this.pos, "orange");
                 }
             }
             // Check center
             if (this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
                 // debugger
                 this.pos = [this.pos[0] + 1, this.pos[1]];
-                this.map.setColor(this.pos, "lightgreen");
+                this.map.setColor(this.pos, "orange");
             }
             // Check right
             if (right) {
                 // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] + 1];
-                    this.map.setColor(this.pos, "lightgreen");
+                    this.map.setColor(this.pos, "orange");
                 }
             }
         }
@@ -108,10 +110,11 @@ class Player {
 
 
     drawPlayer(ctx) {
-        ctx.fillStyle = "blue";
-        ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.fillStyle = "blue";
+        // ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.strokeStyle = "black";
+        // ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        ctx.drawImage(this.image, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
 
     }
 }

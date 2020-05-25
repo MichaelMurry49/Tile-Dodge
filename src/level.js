@@ -57,7 +57,7 @@ class Level {
         })
         
         // debugger
-        if (this.map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "lightgreen"))) {
+        if (this.map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "orange"))) {
             if(this.posId === 5) {
                 alert("congratulations, you win");
                 window.clearInterval(this.curLevel);

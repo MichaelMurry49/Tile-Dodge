@@ -6,6 +6,8 @@ class RandomMovementCreature{
         this.size = size;
         this.map = map;
         this.count = 0;
+        this.image = new Image();
+        this.image.src = './assets/RandomMovement.png';
     }
 
     reset(){
@@ -46,10 +48,11 @@ class RandomMovementCreature{
             this.count = 0;
             this.move();
         }
-        ctx.fillStyle = "orange";
-        ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.fillStyle = "orange";
+        // ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.strokeStyle = "black";
+        // ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        ctx.drawImage(this.image, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
 
     }
 }

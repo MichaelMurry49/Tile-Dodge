@@ -1,20 +1,35 @@
 .menu-button {
-    background: linear-gradient(lightblue, skyblue);
+    background: linear-gradient(tan,darkorange);
     border-radius: 50px;
-    border-color: blue;
-    height: 25px;
-    width: 100px;
+    border-color: black;
+    color: black;
+    height: 30px;
+    width: 300px;
     margin: 5px;
 }
 
-.tile-dodge {
+/* .tile-dodge {
     background-color: aqua;
     color: blue;
-}
+} */
 
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background: linear-gradient(tan, orange);;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+.html {
+    margin: 0px;
+}
+
+.body {
+    display: flex;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
