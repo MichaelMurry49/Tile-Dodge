@@ -30,7 +30,7 @@ class Map {
                 let rand = Math.floor(Math.random() * temp.length)
                 // console.log(temp[rand])
                 this.gridKeys[i].push(temp[rand]);
-                this.gridColors[i][j] = "gray";
+                this.gridColors[i][j] = "tan";
                 temp = temp.slice(0, rand).concat(temp.slice(rand + 1));
                 // console.log(this.gridKeys, i, j)
             }

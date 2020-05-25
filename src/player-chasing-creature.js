@@ -8,6 +8,8 @@ class RandomMovementCreature {
         this.size = size;
         this.count = 0;
         this.player = player;
+        this.pinkeye = new Image();
+        this.pinkeye.src = './assets/pinkeye.png';
     }
 
     reset() {
@@ -48,12 +50,12 @@ class RandomMovementCreature {
             this.count = 0;
             this.move();
         }
-        if(this.type==="vert") ctx.fillStyle = "pink";
-        if(this.type==="horz") ctx.fillStyle = "purple";
-        if(this.type==="diag") ctx.fillStyle = "red";
-        ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        ctx.strokeStyle = "black";
-        ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        if (this.type === "vert") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        if (this.type === "horz") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        if (this.type === "diag") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        // ctx.strokeStyle = "black";
+        // ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
 
     }
 }
