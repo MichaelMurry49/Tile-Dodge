@@ -1,14 +1,16 @@
 import Map from './map';
 class Player {
     constructor(size, map) {
+        this.iPos = [3,3]
         this.pos = [3, 3];
         this.size = size;
         this.map = map;
     }
 
     reset(){
-        this.pos = [3,3];
+        this.pos = this.iPos;
     }
+
 
     move(key) {
         // let neighbors = [];

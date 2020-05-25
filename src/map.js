@@ -18,6 +18,7 @@ class Map {
     }
 
     reset(){
+        this.gridKeys = [];
         this.fillGrid();
     }
 
@@ -58,7 +59,7 @@ class Map {
         return this.gridColors;
     }
 
-    drawMap(x, ctx, title) {
+    drawMap(x, ctx, posId, liveCount) {
         // console.log(x);
         ctx.clearRect(0, 0, this.width, this.height);
         for (let i = 0; i < x; i++) {
@@ -74,7 +75,8 @@ class Map {
             }
         } 
         ctx.fillStyle = "black";
-        ctx.fillText(title, 270, 30);
+        ctx.fillText(`Level ${posId + 1}`, 80, 30);
+        ctx.fillText(`Extra Lives: ${liveCount}`, 370, 30);
     }
 }
 

@@ -7,7 +7,7 @@ class GameView {
         this.game = game;
     }
     start() {
-        this.game.startLevel();
+        this.game.startLevel(0);
         
     }
 }
