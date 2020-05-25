@@ -3,13 +3,13 @@ import Player from './player';
 import RandomMovementCreature from './random-movement-creature';
 import PlayerChasingCreature from './player-chasing-creature';
 class Level {
-    constructor(title, ctx, map, player, creatures, game){
+    constructor(posId, ctx, map, player, creatures, game){
         this.ctx = ctx;
         this.map = map;
         this.player = player;
         this.creatures = creatures;
         this.levelRunning = false;
-        this.title = title;
+        this.posId = posId;
         this.game = game;
 
     }
@@ -24,7 +24,7 @@ class Level {
     }
     step() {
         // debugger
-        this.map.drawMap(8, this.ctx, this.title);
+        this.map.drawMap(8, this.ctx, this.posId, this.game.livesLeft());
 
         let movements = document.addEventListener("keypress", e => {
             // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
@@ -40,20 +40,37 @@ class Level {
         this.creatures.map(el => {
             if (el.getXPos() === this.player.getXPos() && el.getYPos() === this.player.getYPos()) {
             // debugger;
-            alert("game over, you lose");
-            this.levelRunning = false;
-            window.clearInterval(this.curLevel);
+            if(this.game.livesLeft() === 0){
+                alert("game over, you lose");
+                this.levelRunning = false;
+                window.clearInterval(this.curLevel);
+            } else {
+                this.game.loseLife();
+                window.clearInterval(this.curLevel);
+                // this.map.reset();
+                this.player.reset();
+                this.creatures.map(c => c.reset());
+                this.game.startLevel(this.posId);
+            }
+            
         }
         })
         
         // debugger
         if (this.map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "lightgreen"))) {
-            alert("congratulations, you win");
-            this.levelRunning = false;
-            window.clearInterval(this.curLevel);
-            this.map.reset();
-            this.player.reset();
-            this.game.startLevel();
+            if(this.posId === 5) {
+                alert("congratulations, you win");
+                window.clearInterval(this.curLevel);
+            } else {
+                this.levelRunning = false;
+                window.clearInterval(this.curLevel);
+                this.map.reset();
+                this.player.reset();
+                this.creatures.map(c => c.reset());
+                this.game.gainLife();
+                this.game.startLevel(this.posId + 1);
+            }
+            
 
         }
 

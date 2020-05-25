@@ -1,10 +1,15 @@
 import Map from './map';
 class RandomMovementCreature{
     constructor(size, map, startPos) {
+        this.iPos = startPos;
         this.pos = startPos;
         this.size = size;
         this.map = map;
         this.count = 0;
+    }
+
+    reset(){
+        this.pos = this.iPos;
     }
 
     move() {
