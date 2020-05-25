@@ -10,6 +10,10 @@ class RandomMovementCreature {
         this.player = player;
         this.pinkeye = new Image();
         this.pinkeye.src = './assets/pinkeye.png';
+        this.sideeye = new Image();
+        this.sideeye.src = './assets/sideeyemonster.png';
+        this.pinkside = new Image();
+        this.pinkside.src = './assets/pinkeyemonster.png';
     }
 
     reset() {
@@ -51,8 +55,8 @@ class RandomMovementCreature {
             this.move();
         }
         if (this.type === "vert") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        if (this.type === "horz") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        if (this.type === "diag") ctx.drawImage(this.pinkeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        if (this.type === "horz") ctx.drawImage(this.sideeye, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
+        if (this.type === "diag") ctx.drawImage(this.pinkside, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
         // ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
         // ctx.strokeStyle = "black";
         // ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
