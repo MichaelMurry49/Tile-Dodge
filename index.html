@@ -11,10 +11,34 @@
 <body>
     <!-- <h1>Testing</h1> -->
     <div class="page">
+        <div class="instructions">
+            <label> 
+                Travel to every key on the board in order to advance to the next level</br></br>
+                Use your 10 extra lives wisely to progress through each level</br></br>
+                Getting caught by a creature will result in lost life</br></br>
+                There are currently five levels to defeat</br></br>
+                How fast can you type?
+            </label>
+        </div>
         <canvas id="tile-dodge"></canvas>
+        <div class="instructions">
+            <label>
+                Creatures list: </br></br>
+                <img src="./assets/RandomMovement.png" alt="Random Movement Creatures" width="30" height="30">
+                Orange Creatures move around all 8 directions at random</br></br>
+                <img src="./assets/pinkeye.png" alt="Pink Eyes" width="30" height="30">
+                Pink eyes will chase you down, but can not move diagonal.
+                Pink eyes prioritise vertical movements over horizontal movements</br></br>
+                <img src="./assets/sideeyemonster.png" alt="Side Eye Monsters" width="30" height="30">
+                Side eye monsters behave like pink eyes, but prioritise horizontal movemeents</br></br>
+                <img src="./assets/pinkeyemonster.png" alt="Pink Eye Monsters" width="30" height="30">
+                Watch out pink eye monsters will chase you down and can move in all 8 directions!
+            </label>
+        </div>
+        <div></div>
         
-        <button class="menu-button" onclick="">Play</button>
-        <button class="menu-button">Instructions</button>
+        <!-- <button class="menu-button" onclick="">Play</button>
+        <button class="menu-button">Instructions</button> -->
     </div>
 </body>
 </html>
