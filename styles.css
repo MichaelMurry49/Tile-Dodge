@@ -1,5 +1,5 @@
 .menu-button {
-    background: linear-gradient(tan,darkorange);
+    background: linear-gradient(white,darkorange);
     border-radius: 50px;
     border-color: black;
     color: black;
@@ -15,21 +15,27 @@
 
 .page {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    background: linear-gradient(tan, orange);;
+    /* background: linear-gradient(tan, orange); */
     height: 100vh;
     width: 100vw;
     margin: 0px;
 }
 
-.html {
-    margin: 0px;
-}
 
-.body {
-    display: flex;
+
+body {
+    background: linear-gradient(darkorange, black);
     margin: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding-top: 15px;
+}
+
+.instructions {
+    margin: 25px;
+    color: white;
+    font-style: arial;
 }
