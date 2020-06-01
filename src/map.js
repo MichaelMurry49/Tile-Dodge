@@ -43,6 +43,9 @@ class Map {
     }
 
     getKey(pos) {
+        // if(!this.gridKeys[pos[0]][pos[1]]){
+        //     debugger;
+        // }
         // console.log(this.gridKeys, pos);
         return this.gridKeys[pos[0]][pos[1]];
     }
