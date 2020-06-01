@@ -8,10 +8,13 @@
     margin: 5px;
 }
 
-/* .tile-dodge {
-    background-color: aqua;
-    color: blue;
-} */
+#tile-dodge {
+    height: 600px;
+    width: 600px;
+    max-height: 80vh;
+    max-width: 60vw;
+}
+
 
 .page {
     display: flex;
