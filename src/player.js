@@ -25,74 +25,84 @@ class Player {
         let left = false;
         let right = false;
         let down = false;
+        let found = false;
         if (this.pos[0] > 0) up = true;
         if (this.pos[0] < 7) down = true;
         if (this.pos[1] > 0) left = true;
         if (this.pos[1] < 7) right = true;
         // Check upper positions
-        if (up) {
+        if (up && !found) {
             // Check left
-            if (left) {
+            // debugger;
+            if (left && !found) {
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] - 1]) === key) {
                     // debugger
                     this.pos = [this.pos[0] - 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "orange");
+                    found = true;
                 }
             }
             // Check center
-            if (this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
+            if (!found && this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
                 // debugger;
                 this.pos = [this.pos[0] - 1, this.pos[1]];
                 this.map.setColor(this.pos, "orange");
+                found = true;
             }
             // Check right
-            if (right) {
+            if (right && !found) {
                 // debugger;
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] - 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "orange");
+                    found = true;
                 }
             }
         }
         // Check center positions
         // Check left
-        if (left) {
+        if (left && !found) {
             if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
                 // debugger
                 this.pos = [this.pos[0], this.pos[1] - 1];
                 this.map.setColor(this.pos, "orange");
+                found = true;
             }
         }
         // Check right
-        if (right) {
+        if (right && !found) {
             if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
                 // debugger
                 this.pos = [this.pos[0], this.pos[1] + 1];
                 this.map.setColor(this.pos, "orange");
+                found = true;
             }
         }
         // Check lower positions
-        if (down) {
+        if (down && !found) {
             // Check left
-            if (left) {
+            if (left && !found) {
                 // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "orange");
+                    found = true;
                 }
             }
             // Check center
-            if (this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
+            if (!found && this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
                 // debugger
                 this.pos = [this.pos[0] + 1, this.pos[1]];
                 this.map.setColor(this.pos, "orange");
+                found = true;
             }
             // Check right
-            if (right) {
+            if (right && !found) {
                 // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "orange");
+                    found = true;
                 }
             }
         }
