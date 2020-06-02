@@ -1,11 +1,21 @@
-.menu-button {
+.menu-buttons  {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.menu-buttons button {
     background: linear-gradient(white,darkorange);
+    text-decoration: none;
     border-radius: 50px;
     border-color: black;
     color: black;
-    height: 30px;
-    width: 300px;
+    font-size: 3vh;
+    /* height: 30px;
+    width: 300px; */
     margin: 5px;
+    width: 30vw;
+    height: 6vw;
 }
 
 #tile-dodge {
