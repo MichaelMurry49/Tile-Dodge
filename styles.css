@@ -4,7 +4,7 @@
     
 }
 
-.menu-buttons button {
+.menu-buttons > button {
     background: linear-gradient(white,darkorange);
     text-decoration: none;
     border-radius: 50px;
@@ -40,7 +40,7 @@
 
 
 body {
-    background: linear-gradient(darkorange, black);
+    background: rgb(255, 247, 230);
     margin: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -49,6 +49,6 @@ body {
 
 .instructions {
     margin: 25px;
-    color: white;
+    /* color: white; */
     font-style: arial;
 }
