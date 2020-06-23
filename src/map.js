@@ -3,7 +3,7 @@ class Map {
     constructor(w, h) {
         this.width = w;
         this.height = h;
-        this.keyChars = ['.', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+        this.keyChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
             'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -63,7 +63,15 @@ class Map {
                 ctx.fillRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.strokeStyle = "black";
                 ctx.strokeRect(60 * j + 80, 60 * i + 60, 60, 60);
-                ctx.fillStyle = "black";
+                if (this.getKey([i, j]).charCodeAt() > 96){
+                    ctx.fillStyle = "rgb(0,90, 0)";
+                } else if (this.getKey([i, j]).charCodeAt() < 58 ||
+                           this.getKey([i, j]).charCodeAt() === 91 ||
+                           this.getKey([i, j]).charCodeAt() === 93 ){
+                               ctx.fillStyle = "black";
+                } else {
+                    ctx.fillStyle = "rgb(0,45, 0)";
+                }
                 ctx.font = "30px Helvetica";
                 ctx.fillText(this.getKey([i, j]), 60 * j + 100, 60 * i + 100);
             }
