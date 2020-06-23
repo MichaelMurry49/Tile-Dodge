@@ -107,7 +107,6 @@ class Player {
             }
         }
 
-        // this.pos = [Math.floor(Math.random()*8), Math.floor(Math.random()*8)];
     }
 
     getXPos(){
@@ -120,10 +119,6 @@ class Player {
 
 
     drawPlayer(ctx) {
-        // ctx.fillStyle = "blue";
-        // ctx.fillRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-        // ctx.strokeStyle = "black";
-        // ctx.strokeRect(60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
         ctx.drawImage(this.image, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
 
     }

@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    overflow: auto;
     align-items: center;
     /* background: linear-gradient(tan, orange); */
     height: 100vh;
@@ -48,7 +49,12 @@ body {
 }
 
 .instructions {
-    margin: 25px;
+    margin: 10px;
     /* color: white; */
-    font-style: arial;
+    font-family: Helvetica;
+    overflow: auto;
+    /* flex-grow: initial; */
+    /* position: absolute; */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
 }

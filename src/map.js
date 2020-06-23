@@ -3,7 +3,7 @@ class Map {
     constructor(w, h) {
         this.width = w;
         this.height = h;
-        this.keyChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+        this.keyChars = ['.', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
             'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
             'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -13,8 +13,6 @@ class Map {
         this.gridColors = new Array(8).fill(null).map(el => new Array(8));
         this.fillGrid();
         this.gridStorage[0][0] = 1;
-        // console.log(this.gridStorage)
-
     }
 
     reset(){
@@ -28,11 +26,9 @@ class Map {
             this.gridKeys.push([]);
             for (let j = 0; j < 8; j++) {
                 let rand = Math.floor(Math.random() * temp.length)
-                // console.log(temp[rand])
                 this.gridKeys[i].push(temp[rand]);
                 this.gridColors[i][j] = "tan";
                 temp = temp.slice(0, rand).concat(temp.slice(rand + 1));
-                // console.log(this.gridKeys, i, j)
             }
 
         }
@@ -43,10 +39,6 @@ class Map {
     }
 
     getKey(pos) {
-        // if(!this.gridKeys[pos[0]][pos[1]]){
-        //     debugger;
-        // }
-        // console.log(this.gridKeys, pos);
         return this.gridKeys[pos[0]][pos[1]];
     }
 
@@ -63,17 +55,16 @@ class Map {
     }
 
     drawMap(x, ctx, posId, liveCount) {
-        // console.log(x);
         ctx.clearRect(0, 0, this.width, this.height);
         for (let i = 0; i < x; i++) {
             for (let j = 0; j < x; j++) {
-                // ctx.fillStyle = ["gray", /*"orange", "yellow", "lightblue", "lightgreen", "turquoise", "pink",*/ "silver"][Math.floor(Math.random() * 2)];
+                
                 ctx.fillStyle = this.getColor([i,j]);
                 ctx.fillRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.strokeStyle = "black";
                 ctx.strokeRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.fillStyle = "black";
-                // this.getKey([i, j]) === this.getKey([i, j]).toUpperCase ? ctx.font = "30px Source Sans Pro" : "60px Source Sans Pro"
+                ctx.font = "30px Helvetica";
                 ctx.fillText(this.getKey([i, j]), 60 * j + 100, 60 * i + 100);
             }
         } 

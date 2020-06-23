@@ -11,11 +11,11 @@ class Level {
         this.levelRunning = false;
         this.posId = posId;
         this.game = game;
+        this.paused = false;
 
     }
 
     running(){
-        // debugger;
         return this.levelRunning;
     }
     start(){
@@ -23,14 +23,12 @@ class Level {
         this.levelRunning = true;
     }
     step() {
-        // debugger
+        if(this.paused) return;
         this.map.drawMap(8, this.ctx, this.posId, this.game.livesLeft());
 
         let movements = document.addEventListener("keypress", e => {
-            // ctx.clearRect(60 * this.pos[0] + 80, 60 * this.pos[1] + 60, this.size, this.size);
             this.player.move(e.key)
         }, false)
-        // debugger;
         this.player.drawPlayer(this.ctx);
 
         this.creatures.map(el => {

@@ -36,6 +36,6 @@ import PlayerChasingCreature from './player-chasing-creature';
         let game = new Game(ctx, map, player, creatures);
         let gameview = new GameView(game);
         
-        ctx.font = "30px noto sans";
+        ctx.font = "30px Arial";
         gameview.start(); 
     });
