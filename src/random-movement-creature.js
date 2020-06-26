@@ -23,7 +23,6 @@ class RandomMovementCreature{
         if (this.pos[0] < 7) down = true;
         if (this.pos[1] > 0) left = true;
         if (this.pos[1] < 7) right = true;
-        // Check upper positions
         let vert = 0;
         let horz = 0;
         while(vert === 0 && horz === 0){
@@ -44,7 +43,6 @@ class RandomMovementCreature{
         return this.pos[0];
     }
 
-
     drawCreature(ctx) {
         this.count += 1;
         if(this.count >= 35){
@@ -52,7 +50,6 @@ class RandomMovementCreature{
             this.move();
         }
         ctx.drawImage(this.image, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-
     }
 }
 

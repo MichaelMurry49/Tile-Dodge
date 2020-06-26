@@ -1,7 +1,3 @@
-import Map from './map';
-import Player from './player';
-import RandomMovementCreature from './random-movement-creature';
-import PlayerChasingCreature from './player-chasing-creature';
 class Level {
     constructor(posId, ctx, map, player, creatures, game){
         this.ctx = ctx;
@@ -17,6 +13,10 @@ class Level {
 
     running(){
         return this.levelRunning;
+    }
+
+    pause(){
+        this.paused = !this.paused; 
     }
     start(){
         this.curLevel = window.setInterval(() => this.step(), 30);
@@ -37,7 +37,6 @@ class Level {
 
         this.creatures.map(el => {
             if (el.getXPos() === this.player.getXPos() && el.getYPos() === this.player.getYPos()) {
-            // debugger;
             if(this.game.livesLeft() === 0){
                 alert("game over, you lose");
                 this.levelRunning = false;
@@ -45,7 +44,6 @@ class Level {
             } else {
                 this.game.loseLife();
                 window.clearInterval(this.curLevel);
-                // this.map.reset();
                 this.player.reset();
                 this.creatures.map(c => c.reset());
                 this.game.startLevel(this.posId);
@@ -54,7 +52,6 @@ class Level {
         }
         })
         
-        // debugger
         if (this.map.getColorArray().every(outerEl => outerEl.every(innerEl => innerEl === "orange"))) {
             if(this.posId === 5) {
                 alert("congratulations, you win");
@@ -68,10 +65,7 @@ class Level {
                 this.game.gainLife();
                 this.game.startLevel(this.posId + 1);
             }
-            
-
         }
-
     }
 }
 

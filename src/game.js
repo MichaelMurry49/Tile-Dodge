@@ -1,8 +1,6 @@
-import Map from './map';
+
 import Level from './level';
-import Player from './player';
-import RandomMovementCreature from './random-movement-creature';
-import PlayerChasingCreature from './player-chasing-creature';
+
 class Game {
     constructor(ctx, map, player, creatures,/** rmc2, pcc2, rmc3, pcc3, **/){
         this.extraLives = 10;
@@ -10,7 +8,6 @@ class Game {
         this.ctx = ctx;
         this.map = map;
         this.player = player;
-        // this.levelRunning = false;
         this.creatures = creatures;
        
         this.level1 = new Level(0, this.ctx, this.map, this.player, this.creatures.slice(0, 3), this);
@@ -23,7 +20,6 @@ class Game {
         this.curLevel = this.level1; 
     }
     levelRunning(){
-        // debugger;
         return this.curLevel.running();
     }
     livesLeft(){
@@ -35,11 +31,10 @@ class Game {
     gainLife(){
         this.extraLives += 1;
     }
+
     startLevel(levelId) {
-        // debugger
         this.curLevel = this.levels[levelId];
         this.curLevel.start();
-        // this.nextLevel += 1;
     }
 }
 

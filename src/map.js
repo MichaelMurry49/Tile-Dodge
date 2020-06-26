@@ -1,4 +1,3 @@
-
 class Map {
     constructor(w, h) {
         this.width = w;
@@ -30,7 +29,6 @@ class Map {
                 this.gridColors[i][j] = "tan";
                 temp = temp.slice(0, rand).concat(temp.slice(rand + 1));
             }
-
         }
     }
 
@@ -58,7 +56,6 @@ class Map {
         ctx.clearRect(0, 0, this.width, this.height);
         for (let i = 0; i < x; i++) {
             for (let j = 0; j < x; j++) {
-                
                 ctx.fillStyle = this.getColor([i,j]);
                 ctx.fillRect(60 * j + 80, 60 * i + 60, 60, 60);
                 ctx.strokeStyle = "black";

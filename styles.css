@@ -11,11 +11,7 @@
     border-color: black;
     color: black;
     font-size: 3vh;
-    /* height: 30px;
-    width: 300px; */
     margin: 5px;
-    /* width: 30vw; */
-    /* height: 6vw; */
 }
 
 #tile-dodge {
@@ -25,20 +21,16 @@
     max-width: 60vw;
 }
 
-
 .page {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     overflow: auto;
     align-items: center;
-    /* background: linear-gradient(tan, orange); */
     height: 100vh;
     width: 100vw;
     margin: 0px;
 }
-
-
 
 body {
     background: rgb(255, 247, 230);
@@ -50,11 +42,6 @@ body {
 
 .instructions {
     margin: 10px;
-    /* color: white; */
     font-family: Helvetica;
     overflow: auto;
-    /* flex-grow: initial; */
-    /* position: absolute; */
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
 }

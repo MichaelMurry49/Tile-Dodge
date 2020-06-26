@@ -1,4 +1,4 @@
-import Map from './map';
+// import Map from './map';
 class Player {
     constructor(size, map) {
         this.iPos = [3,3]
@@ -13,19 +13,14 @@ class Player {
         this.pos = this.iPos;
     }
 
-
     move(key) {
-        // let neighbors = [];
-        // for(let i = 0; i < 3; i++){
-        //     if(this.map.gridKeys[pos[0] - ]
-        // }
-        // Check Where The Player can move
-        if (key === this.map.getKey(this.pos)) return;
+        if (key === this.map.getKey(this.pos)) return; // player selected current position
         let up = false;
         let left = false;
         let right = false;
         let down = false;
         let found = false;
+        // Check Where The Player can move
         if (this.pos[0] > 0) up = true;
         if (this.pos[0] < 7) down = true;
         if (this.pos[1] > 0) left = true;
@@ -33,10 +28,8 @@ class Player {
         // Check upper positions
         if (up && !found) {
             // Check left
-            // debugger;
             if (left && !found) {
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] - 1]) === key) {
-                    // debugger
                     this.pos = [this.pos[0] - 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "orange");
                     found = true;
@@ -44,14 +37,12 @@ class Player {
             }
             // Check center
             if (!found && this.map.getKey([this.pos[0] - 1, this.pos[1]]) === key) {
-                // debugger;
                 this.pos = [this.pos[0] - 1, this.pos[1]];
                 this.map.setColor(this.pos, "orange");
                 found = true;
             }
             // Check right
             if (right && !found) {
-                // debugger;
                 if (this.map.getKey([this.pos[0] - 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] - 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "orange");
@@ -63,7 +54,6 @@ class Player {
         // Check left
         if (left && !found) {
             if (this.map.getKey([this.pos[0], this.pos[1] - 1]) === key) {
-                // debugger
                 this.pos = [this.pos[0], this.pos[1] - 1];
                 this.map.setColor(this.pos, "orange");
                 found = true;
@@ -72,7 +62,6 @@ class Player {
         // Check right
         if (right && !found) {
             if (this.map.getKey([this.pos[0], this.pos[1] + 1]) === key) {
-                // debugger
                 this.pos = [this.pos[0], this.pos[1] + 1];
                 this.map.setColor(this.pos, "orange");
                 found = true;
@@ -82,7 +71,6 @@ class Player {
         if (down && !found) {
             // Check left
             if (left && !found) {
-                // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] - 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] - 1];
                     this.map.setColor(this.pos, "orange");
@@ -91,14 +79,12 @@ class Player {
             }
             // Check center
             if (!found && this.map.getKey([this.pos[0] + 1, this.pos[1]]) === key) {
-                // debugger
                 this.pos = [this.pos[0] + 1, this.pos[1]];
                 this.map.setColor(this.pos, "orange");
                 found = true;
             }
             // Check right
             if (right && !found) {
-                // debugger
                 if (this.map.getKey([this.pos[0] + 1, this.pos[1] + 1]) === key) {
                     this.pos = [this.pos[0] + 1, this.pos[1] + 1];
                     this.map.setColor(this.pos, "orange");
@@ -106,7 +92,6 @@ class Player {
                 }
             }
         }
-
     }
 
     getXPos(){
@@ -117,10 +102,8 @@ class Player {
         return this.pos[0];
     }
 
-
     drawPlayer(ctx) {
         ctx.drawImage(this.image, 60 * this.pos[1] + 90, 60 * this.pos[0] + 70, this.size, this.size);
-
     }
 }
 

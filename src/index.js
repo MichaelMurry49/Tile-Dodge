@@ -6,16 +6,12 @@ import Player from './player';
 import RandomMovementCreature from './random-movement-creature';
 import PlayerChasingCreature from './player-chasing-creature';
 
-
-// var play = () => {
     document.addEventListener("DOMContentLoaded", function () {
         const tdCanvas = document.getElementById("tile-dodge");
         tdCanvas.width = 600;
         tdCanvas.height = 600;
-        // const map2 = new Map();
 
         const ctx = tdCanvas.getContext("2d");
-        // debugger;
         const map = new Map(600, 600);
         let player = new Player(30, map);
         
@@ -29,7 +25,6 @@ import PlayerChasingCreature from './player-chasing-creature';
         let pcc4 = new PlayerChasingCreature(30, 2, player, [7, 0]);
         let rmc5 = new RandomMovementCreature(30, map, [5, 0]);
         let pcc5 = new PlayerChasingCreature(30, 0, player, [7, 4]);
-        
 
         let creatures = [rmc, rmc2, rmc3, rmc4, rmc5, pcc, pcc2, pcc3, pcc4, pcc5];
         
