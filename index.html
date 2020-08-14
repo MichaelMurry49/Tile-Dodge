@@ -14,7 +14,9 @@
 <body>
     <!-- <h1>Testing</h1> -->
     <div class="page">
-        <div class="instructions">
+
+    
+        <!--<div class="instructions">
             <label>
                 Travel to every key on the board in order to advance to the next level</br></br>
                 Use your 10 extra lives wisely to progress through each level</br></br>
@@ -22,16 +24,50 @@
                 There are currently 6 levels to defeat</br></br>
                 How fast can you type?
             </label>
-        </div>
+        </div> -->
         <div>
             <canvas id="tile-dodge"></canvas>
             <div class="menu-buttons">
                 <a href="https://github.com/MichaelMurry49/Tile-Dodge"><button>GitHub</button></a>
                 <a href="https://www.linkedin.com/in/michael-murry-b3746a1a6/"><button>LinkedIn</button></a>
             </div>
+            <div id="start-page">
+            <div id="instructions-page" hidden>
+                <label>
+                    Travel to every key on the board in order to advance to the next level</br></br>
+                    Use your 10 extra lives wisely to progress through each level</br></br>
+                    Getting caught by a creature will result in lost life</br></br>
+                    There are currently 6 levels to defeat</br></br>
+                    How fast can you type?
+                </label>
+                </br>
+                </br>
+                </br>
+                </br>
+                <label>
+                    Creatures list: </br></br>
+                    <img src="./assets/RandomMovement.png" alt="Random Movement Creatures" width="30" height="30">
+                    Orange Creatures move around all 8 directions at random</br></br>
+                    <img src="./assets/pinkeye.png" alt="Pink Eyes" width="30" height="30">
+                    Pink eyes will chase you down, but can not move diagonal.
+                    Pink eyes prioritise vertical movements over horizontal movements</br></br>
+                    <img src="./assets/sideeyemonster.png" alt="Side Eye Monsters" width="30" height="30">
+                    Side eye monsters behave like pink eyes, but prioritise horizontal movements</br></br>
+                    <img src="./assets/pinkeyemonster.png" alt="Pink Eye Monsters" width="30" height="30">
+                    Watch out pink eye monsters will chase you down and can move in all 8 directions!
+                </label>
+                </br>
+                </br>
+                <button class="start">Play</button>
+
+            </div>
+            <button class="start">Play</button>
+            <button id="instructions">Instructions</button>
+
+            
         </div>
 
-        <div class="instructions">
+        <!--<div class="instructions">
             <label>
                 Creatures list: </br></br>
                 <img src="./assets/RandomMovement.png" alt="Random Movement Creatures" width="30" height="30">
@@ -44,7 +80,7 @@
                 <img src="./assets/pinkeyemonster.png" alt="Pink Eye Monsters" width="30" height="30">
                 Watch out pink eye monsters will chase you down and can move in all 8 directions!
             </label>
-        </div>
+        </div> -->
 
 
     </div>

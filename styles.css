@@ -5,7 +5,7 @@
 }
 
 .menu-buttons button {
-    background: linear-gradient(white,darkorange);
+    background: linear-gradient(white,rgb(0, 130, 16));
     text-decoration: none;
     border-radius: 50px;
     border-color: black;
@@ -32,8 +32,66 @@
     margin: 0px;
 }
 
+#start-page {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url(assets/td.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 98;
+}
+
+#instructions-page {
+    position: absolute;
+    padding: 50px;
+    top:0;
+    /* visibility: hidden; */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(white,rgb(0, 130, 16));
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 99;
+}
+
+#instructions-page > label {
+    text-align: center;
+}
+
+.start {
+    z-index: 98;
+    position: absolute;
+    bottom: 25px;
+    left: 45%;
+    height: 5%;
+    min-height: 25px;
+    width: 10%;
+    min-width: 100px;
+    background-color: orange;
+    border-color: black;
+}
+
+#instructions {
+    z-index: 98;
+    position: absolute;
+    bottom: 75px;
+    left: 45%;
+    height: 5%;
+    min-height: 25px;
+    width: 10%;
+    min-width: 100px;
+    background-color: orange;
+    border-color: black;
+}
+
 body {
-    background: rgb(255, 247, 230);
+    /* background: rgb(255, 247, 230); */
+    background-color: rgb(0, 85, 16);
+    background: linear-gradient(white, rgb(0, 80, 16));
     margin: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
