@@ -2,7 +2,7 @@
 import Level from './level';
 
 class Game {
-    constructor(ctx, map, player, creatures,/** rmc2, pcc2, rmc3, pcc3, **/){
+    constructor(ctx, map, player, creatures){
         this.extraLives = 10;
         this.nextLevel = 0;
         this.ctx = ctx;

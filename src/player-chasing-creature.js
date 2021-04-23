@@ -1,7 +1,5 @@
-import Map from './map';
 class RandomMovementCreature {
     constructor(size, type, player, startPos) {
-        // debugger;
         this.type = ["diag", "vert", "horz"][type%3];
         this.iPos = startPos;
         this.pos = startPos;

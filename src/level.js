@@ -8,7 +8,6 @@ class Level {
         this.posId = posId;
         this.game = game;
         this.paused = false;
-
     }
 
     running(){
@@ -30,7 +29,6 @@ class Level {
             this.player.move(e.key)
         }, false)
         this.player.drawPlayer(this.ctx);
-
         this.creatures.map(el => {
             el.drawCreature(this.ctx);
         })

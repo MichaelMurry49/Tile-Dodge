@@ -1,4 +1,3 @@
-// import Map from './map';
 class Player {
     constructor(size, map) {
         this.iPos = [3,3]
